@@ -1,9 +1,9 @@
 <%= link_to 'Back', categories_path %>
 <div>
-    <h2>All your categories</h2>
+    <h2>All categories</h2>
     <% if @categories.empty? %>
         <h3>You have not added any category yet</h3>
-        <%= link_to 'Add Category', new_categories_path %>
+        <%= link_to 'Add Category', new_category_path %>
     <% else %>
         <div>
             <% @categories.each do |category| %>
@@ -13,14 +13,19 @@
                 </div>
                 <div>
                     <h2>
-                        <%= category.name%>
+                        <%= link_to category.name, category_expenses_path(category) %>
                     </h2>
                     <span>
-                        <%= category.created_at%>
+                        <%= category.created_at.strftime("%d %b %Y") %>
                     </span>
                 </div>
                 <div>
-                    <%= category.expenses.inject(0) { |sum, e| sum += e.amount  }%>
+                    <span>
+                        Total spent: 
+                    </span>
+                    <Span>
+                        $<%= category.expenses.inject(0) { |sum, e| sum += e.amount  }%> 
+                    </Span>
                 </div>
             </div>
             <% end %>
