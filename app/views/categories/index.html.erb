@@ -1,4 +1,4 @@
-<%= link_to 'Back', categories_path %>
+<%= link_to 'Back', "/", class: 'back-btn' %>
 <div>
     <h2>All categories</h2>
     <% if @categories.empty? %>
@@ -13,7 +13,7 @@
                 </div>
                 <div>
                     <h2>
-                        <%= link_to category.name, category_expenses_path(category) %>
+                        <%= link_to category.name, category_expenses_path(category), class: 'category-name' %>
                     </h2>
                     <span>
                         <%= category.created_at.strftime("%d %b %Y") %>
@@ -31,5 +31,5 @@
             <% end %>
         </div>
     <% end %>
-    <%= link_to 'Add Category', new_category_path %>
+    <%= link_to 'Add Category', new_category_path, class: 'add-new-category-btn' %>
 </div>
