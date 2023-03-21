@@ -1,0 +1,19 @@
+<%= link_to 'Back', categories_path %>
+
+<h2>New Category</h2>
+
+<%= form_with(model: Category, url: categories_path, method: :post) do |f| %>
+
+    <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name, placeholder: "Enter category's name" %>
+    </div>
+
+    <div class="field">
+        <%= f.label :icon %>
+        <%= f.text_field :icon, placeholder: 'Paste icon url'%>
+    </div>
+
+
+    <%= f.submit 'Save', class: 'Submit-btn' %> <br>
+<% end %>

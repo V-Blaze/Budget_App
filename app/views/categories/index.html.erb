@@ -1,0 +1,34 @@
+<%= link_to 'Back', categories_path %>
+<div>
+    <h2>All categories</h2>
+    <% if @categories.empty? %>
+        <h3>You have not added any category yet</h3>
+        <%= link_to 'Add Category', new_category_path %>
+    <% else %>
+        <div>
+            <% @categories.each do |category| %>
+            <div>
+                <div>
+                    <%= image_tag(category.icon || '', class: "category_image") %>
+                </div>
+                <div>
+                    <h2>
+                        <%= link_to category.name, category_expenses_path(category) %>
+                    </h2>
+                    <span>
+                        <%= category.created_at.strftime("%d %b %Y") %>
+                    </span>
+                </div>
+                <div>
+                    <span>
+                        Total spent: 
+                    </span>
+                    <Span>
+                        $<%= category.expenses.inject(0) { |sum, e| sum += e.amount  }%> 
+                    </Span>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    <% end %>
+</div>
