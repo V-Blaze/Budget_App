@@ -16,6 +16,7 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(name: params[:name], amount: params[:amount])
     @expense.author = current_user
     @categories_id = params[:ids]
+    
     @categories_id.each do |id|
       category = Category.find(id) unless id == ''
       @expense.categories.push(category) unless category.nil?

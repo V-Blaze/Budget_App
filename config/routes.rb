@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   devise_scope :user do
+
     authenticated :user do
       root 'categories#index', as: :authenticated_root
     end
@@ -16,5 +17,6 @@ Rails.application.routes.draw do
     unauthenticated do
       root "home#index", as: :unauthenticated_root
     end
+    
   end
 end
