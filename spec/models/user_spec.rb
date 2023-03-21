@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   subject do
     User.new({ full_name: 'Trust', email: 'test3@test.com', password: '123456', password_confirmation: '123456' })
   end

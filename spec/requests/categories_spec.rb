@@ -23,7 +23,7 @@ RSpec.describe 'Category', type: :request do
       current_user = User.first
       current_user.confirm if current_user.confirmed_at.nil?
       sign_in current_user
-      get "/categories/new"
+      get '/categories/new'
     end
 
     it 'is a success' do

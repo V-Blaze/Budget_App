@@ -5,7 +5,7 @@ RSpec.describe Expense, type: :model do
   first_category = Category.first
 
   subject do
-    Expense.new({name: 'PS4', amount: 250, author: current_user, categories: [first_category]},)
+    Expense.new({ name: 'PS4', amount: 250, author: current_user, categories: [first_category] })
   end
 
   before { subject.save }

@@ -4,7 +4,7 @@ RSpec.describe Category, type: :model do
   current_user = User.first
 
   subject do
-    Category.new({name: 'Grocery', icon: 'https://cdn-icons-png.flaticon.com/512/3588/3588658.png', user_id: 1})
+    Category.new({ name: 'Grocery', icon: 'https://cdn-icons-png.flaticon.com/512/3588/3588658.png', user_id: 1 })
   end
 
   before { subject.save }

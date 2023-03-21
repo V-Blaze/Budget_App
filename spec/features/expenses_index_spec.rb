@@ -18,19 +18,13 @@ RSpec.feature 'Expenses#index view', type: :feature, js: true do
   end
 
   scenario "Displaying at least one expense's name" do
-    # Wait until the recipe name appears on the page
     expect(page).to have_content(@expense.name, wait: 5)
-
-    # Now make the assertion
     expect(body).to have_content(@expense.name)
   end
 
   scenario "Displaying Category's expenses total amount" do
-    total_expense = @expenses.inject(0) { |sum, e| sum += e.amount  }
-    # Wait until the recipe name appears on the page
+    total_expense = @expenses.inject(0) { |sum, e| sum + e.amount }
     expect(page).to have_content(total_expense, wait: 5)
-
-    # Now make the assertion
     expect(body).to have_content(total_expense)
   end
 
@@ -44,17 +38,14 @@ RSpec.feature 'Expenses#index view', type: :feature, js: true do
   scenario 'Clicking on the add new category button redirects to /categories/:category_id/expenses/new' do
     add_btn = page.all(:css, '.add-new-expense-btn').first
     expected_url = "#{base_url}/categories/#{@category.id}/expenses/new"
-
     add_btn.click
     expect(page).to have_current_path(expected_url)
   end
 
   scenario 'Clicking on the back button takes you to the home page' do
     back_btn = page.all(:css, '.back-btn').first
-    expected_url = "#{base_url}"
-
+    expected_url = base_url.to_s
     back_btn.click
     expect(page).to have_current_path(expected_url)
   end
-
 end
