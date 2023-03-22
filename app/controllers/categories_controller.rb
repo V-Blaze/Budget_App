@@ -10,6 +10,8 @@ class CategoriesController < ApplicationController
   end
 
   def create
+    return if params[:category][:icon].match(/\A[^A-Za-z0-9]+\z/)
+
     @category = Category.new(category_params)
     @category.user = current_user
 
