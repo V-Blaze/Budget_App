@@ -1,0 +1,45 @@
+.nav-bar {
+    /* width: 100%; */
+    background-color: #3778c2;
+    padding: 0.4rem 0.7rem;
+}
+
+.nav-bar-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-btn {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.harmburger-menu:hover {
+    cursor: pointer;
+    background-color: #5fb523;
+}
+
+.home-btn:hover {
+    cursor: pointer;
+    color: #5fb523;
+}
+
+.profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.3rem;
+    color: #fff;
+}
+
+.nav-sign-out-btn {
+    background: red;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 0.2rem 0.3rem;
+    margin-right: 0.3rem;
+    border: none;
+    color: white;
+  }
