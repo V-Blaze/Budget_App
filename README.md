@@ -61,8 +61,6 @@
 
 ### Key Features <a name="key-features"></a>
 
-<!-- > Describe between 1-3 key features of the application. -->
-
 - A user can register and log in, so that the data is private to them.
 - Introduce new transactions associated with a category.
 - See the money spent on each category.
@@ -71,12 +69,11 @@
 
 <!-- LIVE DEMO -->
 
-<!-- ## 🚀 Live Demo <a name="live-demo"></a> -->
+## 🚀 Live Demo <a name="live-demo"></a>
 
-<!-- > Add a link to your deployed project. -->
+[View Live Demo](https://budget-buddy-n97v.onrender.com/)
 
-
-<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
