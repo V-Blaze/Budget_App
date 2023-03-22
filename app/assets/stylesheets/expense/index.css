@@ -1,22 +1,26 @@
-.categories-main-div {
+.expenses-main-div {
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 
-.category-main-title {
+.expenses-main-title {
   align-self: center;
   font-size: 2rem;
 }
 
-.empty-category {
+.empty-expenses {
   align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.empty-category h3 {
+.empty-expenses h3 {
   font-style: italic;
 }
 
-.empty-category a {
+.empty-expenses a {
   background: #5fb523;
   text-decoration: none;
   border-radius: 5px;
@@ -24,9 +28,24 @@
   margin-right: 0.3rem;
   border: none;
   color: white;
+  text-align: center;
+  align-self: center;
+  width: 50%;
 }
 
-.categories-section {
+.expenses-category-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0.9rem;
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+.ex-cat-name {
+  color: #606467;
+}
+
+.expenses-section {
   display: flex;
   flex-direction: column;
   background: #f1f1f1;
@@ -34,7 +53,7 @@
   gap: 1rem;
 }
 
-.category-section {
+.expense-section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   background: #fff;
@@ -44,44 +63,40 @@
   align-items: center;
 }
 
-.category_image {
+.expenses_image {
   height: 74px;
   width: 74px;
 }
 
-.category-name-div {
+.expenses-name-div {
   display: flex;
   flex-direction: column;
   justify-content: start;
   gap: 1rem;
 }
 
-.category-name-div a {
+.expenses-name-div h2 {
   text-decoration: none;
   font-size: 1.6rem;
   color: #606467;
 }
 
-.category-name-div span {
+.expenses-name-div span {
   font-style: italic;
   font-size: small;
   color: #b8b8b8;
 }
 
-.category-total-amount {
+.expenses-total-amount {
   display: flex;
   justify-content: end;
 }
 
-.category-total-amount span {
+.expenses-total-amount span {
   font-weight: bold;
 }
 
-.category-name-div a:hover {
-  color: #5fb523;
-}
-
-.add-new-category-btn {
+.add-new-expense-btn {
   align-self: center;
   text-decoration: none;
   background: #5fb523;
@@ -92,6 +107,6 @@
   color: white;
 }
 
-.add-new-category-btn:hover {
+.add-new-expense-btn:hover {
   background: #434b54;
 }
