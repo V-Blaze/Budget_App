@@ -22,6 +22,8 @@ class ExpensesController < ApplicationController
       @expense.categories.push(category) unless category.nil?
     end
 
+    return :new unless @expense.categories.any?
+
     if @expense.save
       redirect_to category_expenses_path(@expense.categories.first.id), notice: 'Expenses added successfully'
     else
