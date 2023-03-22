@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: 'budget-buddy-n97v.onrender.com'
   layout 'mailer'
 end
