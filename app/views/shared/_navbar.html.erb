@@ -1,0 +1,22 @@
+<nav class="nav-bar">
+    <div class="nav-bar-div">
+        <%= image_tag 'icons8-menu-rounded-50.png', class: 'harmburger-menu' %>
+        <div>
+            <% if user_signed_in? %>
+                <span><%= link_to 'Categories', "/", class: 'home-btn' %></span>
+            <% else %>
+                <span><%= link_to 'Home', "/", class: 'home-btn' %></span>
+            <% end %>
+        </div>
+        <div class="profile-section">
+            <% if user_signed_in? %>
+                <h3>
+                    Hey <span><%= current_user.full_name%></span>
+                </h3>
+                <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'nav-sign-out-btn' %>
+            <% end %>
+        </div>
+    </div>
+</nav>
+
+

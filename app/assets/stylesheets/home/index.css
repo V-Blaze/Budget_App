@@ -1,0 +1,46 @@
+.splash-main-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-title {
+  font-weight: bolder;
+  font-size: 4rem;
+  color: #3778c2;
+}
+
+.splash-main-div h2 {
+  font-style: italic;
+}
+
+.splash-btns {
+  display: flex;
+  gap: 1.3rem;
+}
+
+.nav-sign-in-btn {
+  background: #5fb523;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 0.2rem 0.3rem;
+  margin-right: 0.3rem;
+  border: none;
+  color: white;
+}
+
+.nav-sign-up-btn {
+  background: #3778c2;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 0.2rem 0.3rem;
+  margin-right: 0.3rem;
+  border: none;
+  color: white;
+}
+
+.nav-sign-up-btn:hover,
+.nav-sign-in-btn:hover {
+  background: #434b54;
+}

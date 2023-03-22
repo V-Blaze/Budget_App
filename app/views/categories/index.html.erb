@@ -1,35 +1,31 @@
-<%= link_to 'Back', "/", class: 'back-btn' %>
-<div>
-    <h2>All categories</h2>
+<div class="categories-main-div">
+    <h2 class="category-main-title">All categories</h2>
     <% if @categories.empty? %>
+    <div class="empty-category">
         <h3>You have not added any category yet</h3>
         <%= link_to 'Add Category', new_category_path %>
+    </div>
     <% else %>
-        <div>
+        <div class="categories-section">
             <% @categories.each do |category| %>
-            <div>
-                <div>
-                    <%= image_tag(category.icon || '', class: "category_image") %>
-                </div>
-                <div>
-                    <h2>
+                <div class="category-section">
+                    <div>
+                        <%= image_tag(category.icon || '', class: "category_image") %>
+                    </div>
+                    <div class="category-name-div">
                         <%= link_to category.name, category_expenses_path(category), class: 'category-name' %>
-                    </h2>
-                    <span>
-                        <%= category.created_at.strftime("%d %b %Y") %>
-                    </span>
+                        <span>
+                            <%= category.created_at.strftime("%d %b %Y") %>
+                        </span>
+                    </div>
+                    <div class="category-total-amount">
+                        <Span>
+                            $<%= category.expenses.inject(0) { |sum, e| sum += e.amount  }%> 
+                        </Span>
+                    </div>
                 </div>
-                <div>
-                    <span>
-                        Total spent: 
-                    </span>
-                    <Span>
-                        $<%= category.expenses.inject(0) { |sum, e| sum += e.amount  }%> 
-                    </Span>
-                </div>
-            </div>
             <% end %>
+            <%= link_to 'Add Category', new_category_path, class: 'add-new-category-btn' %>
         </div>
     <% end %>
-    <%= link_to 'Add Category', new_category_path, class: 'add-new-category-btn' %>
 </div>

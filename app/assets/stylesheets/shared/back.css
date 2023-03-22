@@ -1,0 +1,12 @@
+.back-btn-div {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background-color: #3778c2;
+  padding-left: 0.4rem;
+}
+
+.back-btn-div:hover {
+  color: #5fb523;
+}

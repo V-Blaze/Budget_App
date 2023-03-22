@@ -48,7 +48,7 @@
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://rails.com/">Rails</a></li>
+    <li><a href="https://rails.org/">Rails</a></li>
   </ul>
 </details>
 
@@ -99,8 +99,6 @@ Clone this repository to your desired folder:
 ```sh
  git clone https://github.com/V-Blaze/Budget_App.git
 ```
-
-
 
 ### Install
 
