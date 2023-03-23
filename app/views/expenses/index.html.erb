@@ -1,0 +1,43 @@
+<%= render "shared/back" %>
+<div class="expenses-main-div">
+    <h3 class="expenses-main-title">Expenses</h3>
+        <% if @expenses.empty? %>
+            <div class="empty-expenses">
+                <h3>You have not added any Expenses yet to the <%= @category.name %> Category</h3>
+                <%= link_to 'Add new expenses', new_category_expense_path %>
+            </div>
+        <% else %>
+            <div class="expenses-category-total">
+                <span class="ex-cat-name">
+                    <%= @category.name %>
+                </span>
+                <Span>
+                    $<%= @expenses.inject(0) { |sum, e| sum += e.amount  }%> 
+                </Span>
+            </div>
+            <div class="expenses-section">
+                <% @expenses.each do |expense| %>
+                    <div class="expense-section">
+                        <div>
+                            <%= image_tag(@category.icon || '', class: "expenses_image") %>
+                        </div>
+                        <div  class="expenses-name-div">
+                            <h2>
+                                <%= expense.name %>
+                            </h2>
+                            <span>
+                                <%= expense.created_at.strftime("%d %b %Y") %>
+                            </span>
+                        </div>
+                        <div  class="expenses-total-amount">
+                            <Span>
+                                $<%= expense.amount %> 
+                            </Span>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        <%= link_to 'Add new expenses', new_category_expense_path, class: 'add-new-expense-btn' %>
+    <% end %>
+
+</div>
